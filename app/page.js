@@ -48,16 +48,16 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
 }
 
-// ---------- Brands (Premium Showcase) ----------
+// ---------- Brands (Premium Showcase with real AI-generated promo images) ----------
 const brands = [
-  { name: 'Coca-Cola', tagline: 'Original Taste. Timeless Refresh.', sizes: ['1.5L', '1L', '500ml', '330ml Can', 'Glass'], bg: 'from-red-600 via-red-700 to-red-900', accent: '#F40009', mark: 'C', icon: '🥤' },
-  { name: 'Pepsi', tagline: 'The Bold, The Cold, The Best.', sizes: ['1.5L', '1L', '500ml', 'Can'], bg: 'from-blue-600 via-blue-800 to-slate-900', accent: '#004B93', mark: 'P', icon: '🥤' },
-  { name: 'Sprite', tagline: 'Lemon-Lime. Crisp & Clean.', sizes: ['1.5L', '1L', '500ml', 'Can'], bg: 'from-emerald-500 via-green-600 to-green-900', accent: '#00A651', mark: 'S', icon: '🍋' },
-  { name: '7Up', tagline: 'The Uncola. Fresh & Fizzy.', sizes: ['1.5L', '1L', '500ml', 'Can'], bg: 'from-lime-500 via-green-600 to-emerald-800', accent: '#4A9B3E', mark: '7', icon: '🍋' },
-  { name: 'Mountain Dew', tagline: 'Do The Dew. Bold Citrus Kick.', sizes: ['1.5L', '1L', '500ml', 'Can'], bg: 'from-yellow-400 via-lime-500 to-green-800', accent: '#2E8B2E', mark: 'M', icon: <Zap className="w-6 h-6" /> },
-  { name: 'Nestlé Pure Life', tagline: 'Pure. Trusted. Refreshing.', sizes: ['1.5L', '500ml'], bg: 'from-sky-400 via-sky-600 to-blue-900', accent: '#009CDE', mark: 'N', icon: <Droplets className="w-6 h-6" /> },
-  { name: 'Aquafina', tagline: 'Pure Water, Perfect Every Time.', sizes: ['1.5L', '500ml'], bg: 'from-cyan-400 via-cyan-600 to-blue-800', accent: '#00A9E0', mark: 'A', icon: <Droplets className="w-6 h-6" /> },
-  { name: 'Rani Juice', tagline: 'Real Fruit Pieces. Real Taste.', sizes: ['Can'], bg: 'from-orange-500 via-red-500 to-rose-700', accent: '#F7941D', mark: 'R', icon: '🍊' },
+  { name: 'Coca-Cola', tagline: 'Original Taste. Timeless Refresh.', sizes: ['1.5L', '1L', '500ml', '330ml Can', 'Glass'], img: '/brands/coca-cola.png', bg: 'from-red-600 via-red-700 to-red-900', accent: '#F40009', mark: 'C' },
+  { name: 'Pepsi', tagline: 'The Bold, The Cold, The Best.', sizes: ['1.5L', '1L', '500ml', 'Can'], img: '/brands/pepsi.png', bg: 'from-blue-600 via-blue-800 to-slate-900', accent: '#004B93', mark: 'P' },
+  { name: 'Sprite', tagline: 'Lemon-Lime. Crisp & Clean.', sizes: ['1.5L', '1L', '500ml', 'Can'], img: '/brands/sprite.png', bg: 'from-emerald-500 via-green-600 to-green-900', accent: '#00A651', mark: 'S' },
+  { name: '7Up', tagline: 'The Uncola. Fresh & Fizzy.', sizes: ['1.5L', '1L', '500ml', 'Can'], img: '/brands/7up.png', bg: 'from-lime-500 via-green-600 to-emerald-800', accent: '#4A9B3E', mark: '7' },
+  { name: 'Mountain Dew', tagline: 'Do The Dew. Bold Citrus Kick.', sizes: ['1.5L', '1L', '500ml', 'Can'], img: '/brands/mountain-dew.png', bg: 'from-yellow-400 via-lime-500 to-green-800', accent: '#2E8B2E', mark: 'M' },
+  { name: 'Nestlé Pure Life', tagline: 'Pure. Trusted. Refreshing.', sizes: ['1.5L', '500ml'], img: '/brands/nestle-pure-life.png', bg: 'from-sky-400 via-sky-600 to-blue-900', accent: '#009CDE', mark: 'N' },
+  { name: 'Aquafina', tagline: 'Pure Water, Perfect Every Time.', sizes: ['1.5L', '500ml'], img: '/brands/aquafina.png', bg: 'from-cyan-400 via-cyan-600 to-blue-800', accent: '#00A9E0', mark: 'A' },
+  { name: 'Rani Juice', tagline: 'Real Fruit Pieces. Real Taste.', sizes: ['Can'], img: '/brands/rani-juice.png', bg: 'from-orange-500 via-red-500 to-rose-700', accent: '#F7941D', mark: 'R' },
 ]
 
 // ---------- Products ----------
@@ -70,16 +70,16 @@ const poultryProducts = [
 ]
 
 const beverageProducts = [
-  { name: 'Coca-Cola', desc: 'Original taste — bottles, cans & family packs available.', img: IMG.cocaCola },
-  { name: 'Pepsi', desc: 'The bold cola — 1.5L, 1L, 500ml and cans always in stock.', brand: brands[1] },
-  { name: 'Sprite', desc: 'Refreshing lemon-lime soda — chilled and in-stock 24/7.', img: IMG.sprite },
-  { name: '7Up', desc: 'Crisp lemon-lime refreshment in bottles and cans.', brand: brands[3] },
-  { name: 'Fanta', desc: 'Vibrant orange fizz — bottles and cans in all sizes.', img: IMG.fanta },
-  { name: 'Mountain Dew', desc: 'Bold citrus energy — cold stock available round the clock.', img: IMG.mountainDew },
-  { name: 'Minute Maid Juices', desc: 'Real fruit juices — perfect for retail, cafes and catering.', img: IMG.minuteMaid },
-  { name: 'Nestlé Pure Life', desc: 'Trusted mineral water — 5L, 1.5L and 500ml bottles.', brand: brands[5] },
-  { name: 'Aquafina', desc: 'Pure drinking water — perfect for homes, offices & events.', brand: brands[6] },
-  { name: 'Rani Juice', desc: 'Real fruit pieces — multiple flavors in bottles and cans.', brand: brands[7] },
+  { name: 'Coca-Cola', desc: 'Original taste — bottles, cans & family packs available.', img: '/brands/coca-cola.png' },
+  { name: 'Pepsi', desc: 'The bold cola — 1.5L, 1L, 500ml and cans always in stock.', img: '/brands/pepsi.png' },
+  { name: 'Sprite', desc: 'Refreshing lemon-lime soda — chilled and in-stock 24/7.', img: '/brands/sprite.png' },
+  { name: '7Up', desc: 'Crisp lemon-lime refreshment in bottles and cans.', img: '/brands/7up.png' },
+  { name: 'Fanta', desc: 'Vibrant orange fizz — bottles and cans in all sizes.', img: '/brands/fanta.png' },
+  { name: 'Mountain Dew', desc: 'Bold citrus energy — cold stock available round the clock.', img: '/brands/mountain-dew.png' },
+  { name: 'Minute Maid Juices', desc: 'Real fruit juices — perfect for retail, cafes and catering.', img: '/brands/minute-maid.png' },
+  { name: 'Nestlé Pure Life', desc: 'Trusted mineral water — 1.5L and 500ml bottles.', img: '/brands/nestle-pure-life.png' },
+  { name: 'Aquafina', desc: 'Pure drinking water — perfect for homes, offices & events.', img: '/brands/aquafina.png' },
+  { name: 'Rani Juice', desc: 'Real fruit pieces — multiple flavors in cans.', img: '/brands/rani-juice.png' },
 ]
 
 const reviews = [
@@ -266,47 +266,36 @@ function About() {
   )
 }
 
-// ---------- Brand Showcase Cards (Premium) ----------
-function BrandCard({ b, index }) {
+// ---------- Brand Showcase Cards (Premium with real promo photos) ----------
+function BrandCard({ b }) {
   return (
     <motion.div variants={fadeUp}>
       <a href={waLink(inquiryMessage(b.name))} target="_blank" rel="noreferrer" className="block h-full">
-        <div className={`group relative h-72 rounded-3xl overflow-hidden bg-gradient-to-br ${b.bg} shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-500`}>
-          {/* Decorative circles */}
-          <div className="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-white/10 blur-2xl" />
-          <div className="absolute -left-10 -bottom-10 w-40 h-40 rounded-full bg-white/10 blur-xl" />
-          <div className="absolute inset-0 opacity-15" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)', backgroundSize: '22px 22px' }} />
-
-          {/* Big mark / bottle silhouette */}
-          <div className="absolute right-4 top-4 w-16 h-16 rounded-2xl bg-white/15 backdrop-blur border border-white/20 flex items-center justify-center text-white text-2xl font-black">
-            {b.mark}
+        <div className={`group relative rounded-3xl overflow-hidden bg-gradient-to-br ${b.bg} shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 h-full`}>
+          {/* Product photo */}
+          <div className="relative aspect-square overflow-hidden bg-white/5">
+            <img
+              src={b.img}
+              alt={`${b.name} products`}
+              loading="lazy"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              onError={(e) => { e.currentTarget.style.display = 'none' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent" />
+            <div className="absolute top-3 left-3 bg-white/95 text-slate-900 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider shadow">Premium Brand</div>
           </div>
-          <div className="absolute right-8 bottom-6 opacity-25 group-hover:opacity-40 group-hover:scale-110 transition-all duration-500">
-            <div className="w-24 h-40 rounded-t-full rounded-b-2xl bg-white/30 border border-white/40 backdrop-blur-sm relative">
-              <div className="absolute inset-x-4 top-4 h-3 rounded-full bg-white/40" />
-              <div className="absolute inset-x-3 bottom-4 top-16 rounded-xl bg-white/20" />
+          {/* Content overlay */}
+          <div className="p-5 text-white">
+            <h3 className="text-2xl font-extrabold leading-tight drop-shadow">{b.name}</h3>
+            <p className="mt-1 text-sm text-white/85">{b.tagline}</p>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {b.sizes.map((s, i) => (
+                <span key={i} className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-white/20 border border-white/30 backdrop-blur">{s}</span>
+              ))}
             </div>
-          </div>
-
-          {/* Content */}
-          <div className="relative h-full p-6 flex flex-col justify-between text-white">
-            <div>
-              <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-white/80">
-                <span className="w-8 h-px bg-white/60" /> Premium Brand
-              </div>
-              <h3 className="mt-3 text-3xl font-extrabold leading-tight drop-shadow-sm">{b.name}</h3>
-              <p className="mt-1.5 text-sm text-white/85 max-w-[80%]">{b.tagline}</p>
-            </div>
-            <div>
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {b.sizes.map((s, i) => (
-                  <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-white/20 border border-white/30 backdrop-blur">{s}</span>
-                ))}
-              </div>
-              <div className="inline-flex items-center gap-2 text-sm font-semibold bg-white text-slate-900 rounded-full px-4 py-2 shadow-lg group-hover:gap-3 transition-all">
-                <MessageCircle className="w-4 h-4 text-green-600" />
-                Inquire on WhatsApp
-              </div>
+            <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold bg-white text-slate-900 rounded-full px-4 py-2 shadow-lg group-hover:gap-3 transition-all">
+              <MessageCircle className="w-4 h-4 text-green-600" />
+              Inquire on WhatsApp
             </div>
           </div>
         </div>
@@ -394,34 +383,35 @@ function Products() {
   return (
     <section id="products" className="py-20 lg:py-28 bg-slate-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto">
-          <Badge className="bg-brand-green/10 text-brand-green border-0 mb-3">Our Products</Badge>
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">Fresh Poultry & Cold Drinks</h2>
-          <p className="mt-3 text-slate-600">Retail and wholesale — search below or scroll to explore.</p>
-        </div>
-
-        {/* Search Bar */}
-        <div className="mt-8 max-w-2xl mx-auto">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
-            <Input
-              data-testid="product-search"
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              placeholder="Search products… e.g. Chicken, Coca-Cola, Aquafina"
-              className="h-14 pl-12 pr-12 rounded-full text-base shadow-lg border-slate-200 focus-visible:ring-brand-green"
-            />
-            {q && (
-              <button onClick={() => setQ('')} className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-500" aria-label="Clear">
-                <X className="w-4 h-4" />
-              </button>
+        {/* Header with search on right */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="max-w-2xl">
+            <Badge className="bg-brand-green/10 text-brand-green border-0 mb-3">Our Products</Badge>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">Fresh Poultry & Cold Drinks</h2>
+            <p className="mt-3 text-slate-600">Retail and wholesale — search instantly or scroll to explore.</p>
+          </div>
+          <div className="md:min-w-[340px] lg:min-w-[380px] md:self-end">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+              <Input
+                data-testid="product-search"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder="Search products…"
+                className="h-12 pl-11 pr-10 rounded-full text-sm shadow-md border-slate-200 bg-white focus-visible:ring-brand-green"
+              />
+              {q && (
+                <button onClick={() => setQ('')} className="absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-500" aria-label="Clear">
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
+            {query && (
+              <div className="mt-2 text-xs text-slate-500 text-right pr-2">
+                {totalResults > 0 ? `${totalResults} result${totalResults > 1 ? 's' : ''} found` : ''}
+              </div>
             )}
           </div>
-          {query && (
-            <div className="mt-3 text-center text-sm text-slate-500">
-              {totalResults > 0 ? `${totalResults} result${totalResults > 1 ? 's' : ''} found` : ''}
-            </div>
-          )}
         </div>
 
         {/* No results */}
