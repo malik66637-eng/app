@@ -54,10 +54,10 @@ const brands = [
   { name: 'Pepsi', tagline: 'The Bold, The Cold, The Best.', sizes: ['1.5L', '1L', '500ml', 'Can'], bg: 'from-blue-600 via-blue-800 to-slate-900', accent: '#004B93', mark: 'P', icon: '🥤' },
   { name: 'Sprite', tagline: 'Lemon-Lime. Crisp & Clean.', sizes: ['1.5L', '1L', '500ml', 'Can'], bg: 'from-emerald-500 via-green-600 to-green-900', accent: '#00A651', mark: 'S', icon: '🍋' },
   { name: '7Up', tagline: 'The Uncola. Fresh & Fizzy.', sizes: ['1.5L', '1L', '500ml', 'Can'], bg: 'from-lime-500 via-green-600 to-emerald-800', accent: '#4A9B3E', mark: '7', icon: '🍋' },
-  { name: 'Mountain Dew', tagline: 'Do The Dew. Bold Citrus Kick.', sizes: ['1.5L', '500ml', 'Can'], bg: 'from-yellow-400 via-lime-500 to-green-800', accent: '#2E8B2E', mark: 'M', icon: <Zap className="w-6 h-6" /> },
-  { name: 'Nestlé Pure Life', tagline: 'Pure. Trusted. Refreshing.', sizes: ['5L', '1.5L', '500ml'], bg: 'from-sky-400 via-sky-600 to-blue-900', accent: '#009CDE', mark: 'N', icon: <Droplets className="w-6 h-6" /> },
-  { name: 'Aquafina', tagline: 'Pure Water, Perfect Every Time.', sizes: ['5L', '1.5L', '500ml'], bg: 'from-cyan-400 via-cyan-600 to-blue-800', accent: '#00A9E0', mark: 'A', icon: <Droplets className="w-6 h-6" /> },
-  { name: 'Rani Juice', tagline: 'Real Fruit Pieces. Real Taste.', sizes: ['1L', '240ml', 'Can'], bg: 'from-orange-500 via-red-500 to-rose-700', accent: '#F7941D', mark: 'R', icon: '🍊' },
+  { name: 'Mountain Dew', tagline: 'Do The Dew. Bold Citrus Kick.', sizes: ['1.5L', '1L', '500ml', 'Can'], bg: 'from-yellow-400 via-lime-500 to-green-800', accent: '#2E8B2E', mark: 'M', icon: <Zap className="w-6 h-6" /> },
+  { name: 'Nestlé Pure Life', tagline: 'Pure. Trusted. Refreshing.', sizes: ['1.5L', '500ml'], bg: 'from-sky-400 via-sky-600 to-blue-900', accent: '#009CDE', mark: 'N', icon: <Droplets className="w-6 h-6" /> },
+  { name: 'Aquafina', tagline: 'Pure Water, Perfect Every Time.', sizes: ['1.5L', '500ml'], bg: 'from-cyan-400 via-cyan-600 to-blue-800', accent: '#00A9E0', mark: 'A', icon: <Droplets className="w-6 h-6" /> },
+  { name: 'Rani Juice', tagline: 'Real Fruit Pieces. Real Taste.', sizes: ['Can'], bg: 'from-orange-500 via-red-500 to-rose-700', accent: '#F7941D', mark: 'R', icon: '🍊' },
 ]
 
 // ---------- Products ----------
