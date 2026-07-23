@@ -1,4 +1,4 @@
-import { Poppins } from 'next/font/google'
+import { Poppins, Noto_Nastaliq_Urdu } from 'next/font/google'
 import './globals.css'
 import { Toaster } from '@/components/ui/sonner'
 
@@ -7,6 +7,13 @@ const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700', '800'],
   display: 'swap',
   variable: '--font-poppins'
+})
+
+const nastaliq = Noto_Nastaliq_Urdu({
+  subsets: ['arabic'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-nastaliq'
 })
 
 export const metadata = {
@@ -22,7 +29,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={`${poppins.variable} ${nastaliq.variable}`}>
       <body className="font-sans antialiased bg-white text-slate-900">
         {children}
         <Toaster position="top-center" richColors />

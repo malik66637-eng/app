@@ -127,13 +127,57 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "Contact form → WhatsApp redirect (frontend)"
+    - "Smart search with dropdown suggestions"
+    - "Language switcher EN/UR"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
 
+frontend:
+  - task: "Contact form → WhatsApp redirect (no more Failed to fetch)"
+    implemented: true
+    working: "NA"
+    file: "/app/app/page.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "REBUILT contact form. Removed the fetch('/api/inquiries') call entirely. On submit: validates name/phone/message → constructs a formatted message ('New Inquiry — Malik Poultry Farm\\n\\nName:\\n[name]\\n\\nPhone:\\n[phone]\\n\\nMessage:\\n[message]') → calls openWhatsApp() helper which does window.open('https://wa.me/923484113201?text=<encoded>', '_blank'). If popup blocked, falls back to window.location.href. Shows success toast 'Your inquiry has been sent successfully.' and green overlay 'Thank you!' modal. Please verify: (1) Filling all three fields and submitting a) shows success message b) opens a new tab/window to wa.me/923484113201 with correctly-encoded message body. (2) Empty submit shows validation errors. (3) Works in English AND Urdu (labels + error messages should be translated). Data-testids: contact-form, name-input, phone-input, message-input, submit-btn."
+
+  - task: "Smart search with dropdown suggestions + highlight animation"
+    implemented: true
+    working: "NA"
+    file: "/app/app/page.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Search bar in navbar. As user types, dropdown ([data-testid=search-suggestions]) shows matching items from a 15-item index (5 poultry + 10 beverages). Each suggestion has [data-testid=suggestion-<key>] (e.g. suggestion-coca-cola, suggestion-fresh-chicken). Clicking a suggestion or pressing Enter should smoothly scroll to the target card (id='brand-<key>' for beverage brands, id='product-<key>' for poultry) and apply a red highlight-pulse animation for ~3.5s (class 'highlight-target'). Arrow keys navigate; Escape closes; clicking outside closes; clear (X) button empties query. If no match, shows [data-testid=no-search-results] with 'No products found.' Please verify: (a) typing 'cola' shows Coca-Cola suggestion; (b) clicking it scrolls to brand-coca-cola and the card gets red pulse ring animation; (c) typing 'chicken' shows all 3 chicken items; (d) clicking Fresh Chicken scrolls to product-fresh-chicken card with pulse; (e) typing 'xyz' shows 'No products found'; (f) Enter key selects first suggestion; (g) works on mobile (icon toggle)."
+
+  - task: "Language switcher EN/UR with localStorage persistence and RTL"
+    implemented: true
+    working: "NA"
+    file: "/app/app/page.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Two-state toggle in navbar: [data-testid=lang-en] and [data-testid=lang-ur]. Default English. Clicking UR: sets html dir='rtl' and lang='ur', loads Noto Nastaliq Urdu font, translates ALL user-facing text (nav, hero, about, brands, products, reviews, contact form labels + placeholders + error messages + success overlay + footer). Persists via localStorage key 'mpf_lang'. Reloading page should preserve the last selected language. Product/brand names translated in Urdu (e.g. Coca-Cola → کوکا کولا, Fresh Chicken → تازہ چکن). Search also works in both languages (index rebuilds per language). Please verify: (1) clicking UR instantly translates the whole page and layout is RTL; (2) clicking EN switches back; (3) after reload, previously-selected language is restored; (4) contact form validation errors appear in Urdu when in UR mode; (5) search suggestions show Urdu names when in UR mode."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.1"
+  test_sequence: 3
+  run_ui: true
+
 agent_communication:
     -agent: "main"
-    -message: "Please test the /api/inquiries POST endpoint end-to-end since user reported 'Failed to fetch' on the contact form. Also confirm /api/health returns 200. MongoDB is available at MONGO_URL and DB is process.env.DB_NAME (or fallback 'malik_poultry'). Do NOT test frontend."
-    -agent: "testing"
-    -message: "Backend testing complete. All 9 tests passed successfully. The /api/inquiries endpoint is working correctly: accepts valid inquiries, validates required fields (name/phone), persists to MongoDB, handles CORS, gracefully handles malformed JSON, and returns proper error codes. The user's 'Failed to fetch' issue is resolved. Health endpoint also working. No backend issues found. Ready for summary."
+    -message: "Frontend testing needed for 3 features: (1) Contact form now opens WhatsApp directly instead of calling the API (user reported 'Failed to fetch' — API is deprecated for this flow). (2) Smart search with dropdown suggestions and highlight-pulse scroll animation. (3) Language switcher (English ↔ Urdu) with full page translation, RTL layout, and localStorage persistence. Please test each thoroughly. The user specifically asked to verify the contact form now WORKS (i.e. opens WhatsApp with pre-filled message on submit, and no longer shows 'Failed to fetch'). NOTE: window.open to wa.me may open a new tab — in Playwright, listen for a new page/popup event OR check that page.evaluate('window.open = spy') captures the correct URL. Base URL for testing: https://poultry-beverages-pk.preview.emergentagent.com"
