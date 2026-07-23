@@ -22,12 +22,23 @@ const ADDRESS = '6M53+932, Kalaswala, Pakistan'
 
 const IMG = {
   hero: 'https://images.unsplash.com/photo-1630090374791-c9eb7bab3935?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHw0fHxwb3VsdHJ5JTIwZmFybXxlbnwwfHx8fDE3ODQ3Mjk3MTB8MA&ixlib=rb-4.1.0&q=85',
-  freshChicken: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwyfHxmcmVzaCUyMGNoaWNrZW58ZW58MHx8fHwxNzg0NzI5NzExfDA&ixlib=rb-4.1.0&q=85',
-  liveChicken: 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHwxfHxwb3VsdHJ5JTIwZmFybXxlbnwwfHx8fDE3ODQ3Mjk3MTB8MA&ixlib=rb-4.1.0&q=85',
   farm: 'https://images.pexels.com/photos/19972937/pexels-photo-19972937.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  colas: 'https://images.pexels.com/photos/4113660/pexels-photo-4113660.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  fridge: 'https://images.pexels.com/photos/4113653/pexels-photo-4113653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  water: 'https://images.unsplash.com/photo-1616118132534-381148898bb4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NDQ2MzR8MHwxfHNlYXJjaHwyfHxib3R0bGVkJTIwd2F0ZXJ8ZW58MHx8fHwxNzg0NzI5NzE3fDA&ixlib=rb-4.1.0&q=85'
+  // Poultry products (each unique)
+  freshChicken: 'https://images.pexels.com/photos/8251004/pexels-photo-8251004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  liveChicken: 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=940&q=80',
+  chickenMeat: 'https://images.pexels.com/photos/6107721/pexels-photo-6107721.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  eggs: 'https://images.unsplash.com/photo-1506976785307-8732e854ad03?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHxlZ2dzJTIwdHJheXxlbnwwfHx8fDE3ODI1NDgzMzJ8MA&ixlib=rb-4.1.0&q=85',
+  wholesalePoultry: 'https://images.pexels.com/photos/16831301/pexels-photo-16831301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  // Beverage products (each unique)
+  cocaCola: 'https://images.pexels.com/photos/35020136/pexels-photo-35020136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  sprite: 'https://images.unsplash.com/photo-1680404005217-a441afdefe83?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwxfHxTcHJpdGUlMjBib3R0bGV8ZW58MHx8fHwxNzgzMDA1ODAzfDA&ixlib=rb-4.1.0&q=85',
+  fanta: 'https://images.pexels.com/photos/17408558/pexels-photo-17408558.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  mountainDew: 'https://images.pexels.com/photos/18297528/pexels-photo-18297528.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  minuteMaid: 'https://images.pexels.com/photos/5946781/pexels-photo-5946781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  water: 'https://images.pexels.com/photos/31699476/pexels-photo-31699476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  // Legacy aliases for other sections
+  colas: 'https://images.pexels.com/photos/35020136/pexels-photo-35020136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  fridge: 'https://images.pexels.com/photos/4113653/pexels-photo-4113653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 }
 
 const fadeUp = {
@@ -46,17 +57,18 @@ const brands = [
 const poultryProducts = [
   { name: 'Fresh Chicken', desc: 'Cleaned, cut & packed daily — ready for your kitchen or restaurant.', img: IMG.freshChicken },
   { name: 'Live Chicken', desc: 'Healthy, farm-raised live broilers available any time, any quantity.', img: IMG.liveChicken },
-  { name: 'Broiler Chicken', desc: 'Premium broiler stock for wholesalers, hotels & caterers.', img: IMG.farm },
-  { name: 'Wholesale Supply', desc: 'Bulk poultry supply at competitive rates for shops and businesses.', img: IMG.freshChicken },
+  { name: 'Chicken Meat', desc: 'Fresh, hygienically cut chicken meat — packed and ready to cook.', img: IMG.chickenMeat },
+  { name: 'Farm Fresh Eggs', desc: 'Farm-fresh brown & white eggs delivered in trays and cartons.', img: IMG.eggs },
+  { name: 'Wholesale Poultry Supply', desc: 'Bulk poultry supply in crates — best rates for shops & distributors.', img: IMG.wholesalePoultry },
 ]
 
 const beverageProducts = [
-  { name: 'Coca-Cola', desc: 'Original taste — bottles, cans & family packs available.', img: IMG.colas },
-  { name: 'Sprite / Fanta', desc: 'Refreshing lemon-lime and orange soft drinks in all sizes.', img: IMG.fridge },
-  { name: 'Mountain Dew', desc: 'Bold citrus energy — cold stock available 24/7.', img: IMG.colas },
-  { name: 'Minute Maid & Juices', desc: 'Fruit juices and nectars for retail and catering needs.', img: IMG.fridge },
-  { name: 'Bottled Water', desc: 'Mineral & purified drinking water in multiple sizes.', img: IMG.water },
-  { name: 'Energy Drinks', desc: 'Popular energy drink brands — subject to availability.', img: IMG.colas },
+  { name: 'Coca-Cola', desc: 'Original taste — bottles, cans & family packs available.', img: IMG.cocaCola },
+  { name: 'Sprite', desc: 'Refreshing lemon-lime soda — chilled and in-stock 24/7.', img: IMG.sprite },
+  { name: 'Fanta', desc: 'Vibrant orange fizz — bottles and cans in all sizes.', img: IMG.fanta },
+  { name: 'Mountain Dew', desc: 'Bold citrus energy — cold stock available round the clock.', img: IMG.mountainDew },
+  { name: 'Minute Maid Juices', desc: 'Real fruit juices — perfect for retail, cafes and catering.', img: IMG.minuteMaid },
+  { name: 'Bottled Water', desc: 'Pure mineral & drinking water bottles in multiple sizes.', img: IMG.water },
 ]
 
 const reviews = [
@@ -318,7 +330,7 @@ function Products({ onInquire }) {
           </div>
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }}
             variants={{ show: { transition: { staggerChildren: 0.08 } } }}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
             {poultryProducts.map((p, i) => <ProductCard key={i} p={p} onInquire={onInquire} />)}
           </motion.div>
         </div>
